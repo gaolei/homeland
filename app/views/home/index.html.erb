@@ -38,17 +38,19 @@
     <%
       odd_topics, even_topics = @latest_topics.partition.each_with_index { |t, i| i.odd?  }
     %>
-    <div class="col-md-6">
-      <% cache([odd_topics, "odd"]) do %>
-          <%= render partial: "topics/topic", collection: odd_topics, locals: { suggest: false } %>
-      <% end %>
-    </div>
 
     <div class="col-md-6">
       <% cache([even_topics, "even"]) do %>
           <%= render partial: "topics/topic", collection: even_topics, locals: { suggest: false } %>
       <% end %>
     </div>
+
+    <div class="col-md-6">
+      <% cache([odd_topics, "odd"]) do %>
+          <%= render partial: "topics/topic", collection: odd_topics, locals: { suggest: false } %>
+      <% end %>
+    </div>
+    
   </div>
   <div class="panel-footer">
     <%= link_to "查看更多...", recent_topics_path %>
@@ -64,13 +66,15 @@
     <%
       odd_topics, even_topics = @excellent_topics.partition.each_with_index { |t, i| i.odd?  }
     %>
-    <div class="col-md-6 topics-group">
-      <%= render partial: "topics/topic", collection: odd_topics, locals: { suggest: false } %>
-    </div>
 
     <div class="col-md-6 topics-group">
       <%= render partial: "topics/topic", collection: even_topics, locals: { suggest: false } %>
     </div>
+
+    <div class="col-md-6 topics-group">
+      <%= render partial: "topics/topic", collection: odd_topics, locals: { suggest: false } %>
+    </div>
+    
     <% end %>
   </div>
   <div class="panel-footer">

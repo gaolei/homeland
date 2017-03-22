@@ -23,15 +23,25 @@ sudo apt-get install -y git \
                         postgresql-9.4 \
                         elasticsearch \
                         openjdk-7-jre-headless \
-                        ruby2.3 \
-                        ruby2.3-dev
 
-sudo update-rc.d elasticsearch defaults
-sudo service elasticsearch start
+
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+
+\curl -sSL https://get.rvm.io | bash -s stable
+
+source /home/vagrant/.rvm/scripts/rvm
+
+rvm install 2.4
 
 sudo su postgres -c "createuser -d -R -S $USER"
 
 gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 
-sudo gem install bundler
+gem install bundler
 bundle config mirror.https://rubygems.org https://ruby.taobao.org
+
+sudo update-rc.d elasticsearch defaults
+sudo service elasticsearch start
+
+
+cd /vagrant && bundler install && ./bin/setup

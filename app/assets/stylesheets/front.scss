@@ -5,7 +5,6 @@
  *= require notifications
  *= require home
  *= require users
- *= require notes
  *= require teams
  *= require search
  *= require toc
@@ -483,11 +482,6 @@
     .info { color: #999; margin-bottom: 8px; font-size: 13px; }
     .date { font-size: 12px; color: #aaa;}
   }
-}
-
-#site_nodes .site {
-  margin-bottom: 10px;
-  a { color: #777; }
 }
 
 .sidebar {

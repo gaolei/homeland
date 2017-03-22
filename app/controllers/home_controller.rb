@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @teams = Team.fields_for_list.hot.limit(100)
     
     @suggest_topics = Topic.suggest.fields_for_list.limit(4).to_a
-    @latest_topics = Topic.recent.with_replies_or_likes.fields_for_list.limit(10).to_a
+    @latest_topics = Topic.recent.fields_for_list.limit(10).to_a
     
   end
 

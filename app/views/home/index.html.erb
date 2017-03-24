@@ -83,7 +83,10 @@
 </div>
 <%end%>
 
-<%= render "/shared/index_sections" %>
+<% if !mobile? %>
+  <%= render "/shared/index_sections" %>
+<% end %>
+
 <%= render "/shared/teams" %>
 <%= render "/shared/hot_locations" %>
 

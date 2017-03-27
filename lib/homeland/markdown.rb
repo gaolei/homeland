@@ -169,7 +169,7 @@ module Homeland
 
         ### 视频插入
 
-        目前支持 Youtube 和 Youku 两家的视频插入，你只需要复制视频播放页面，浏览器地址栏的网页 URL 地址，并粘贴到话题／回复文本框，提交以后将自动转换成视频播放器。
+        目前支持 Youtube 、 Youku  QQ的视频插入，你只需要复制视频播放页面，浏览器地址栏的网页 URL 地址，并粘贴到话题／回复文本框，提交以后将自动转换成视频播放器。
 
         #### 例如
 
@@ -184,6 +184,10 @@ module Homeland
         **Youku**
 
         http://v.youku.com/v_show/id_XMjQzMTY1MDk3Ng==.html
+
+        **QQ**
+
+        https://v.qq.com/x/page/x0383lples8.html
 
         ···
 

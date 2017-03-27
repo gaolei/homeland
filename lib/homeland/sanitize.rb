@@ -32,6 +32,11 @@ module Homeland
         valid_video_url = true
       end
 
+      # QQ
+      if node['src'].match?(%r{\A(?:http[s]{0,1}?:)?//v\.qq\.com/iframe/player\.html})
+        valid_video_url = true
+      end
+
       return unless valid_video_url
 
       # We're now certain that this is a YouTube embed, but we still need to run

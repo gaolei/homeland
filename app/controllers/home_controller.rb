@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def uploads
-    return render_404 if Rails.env.production?
+    #return render_404 if Rails.env.production?
 
     # This is a temporary solution for help generate image thumb
     # that when you use :file upload_provider and you have no Nginx image_filter configurations.
